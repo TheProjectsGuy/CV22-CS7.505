@@ -10,3 +10,8 @@ A repository to store all items pertaining to course `Computer Vision` at IIIT H
 
 ## Assignments
 
+The assignments are in the [Assignments](./Assignments/README.md) folder. The items are as follows.
+
+| Name | Topic |
+| :--- | :--- |
+| [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
