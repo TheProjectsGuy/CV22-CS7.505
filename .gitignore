@@ -1,2 +1,6 @@
 # Ignore VSCode
 /.vscode/
+
+# Ignore compiled files (python)
+__pycache__/
+*.pyc

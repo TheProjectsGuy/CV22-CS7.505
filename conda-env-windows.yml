@@ -1,0 +1,12 @@
+name: cv-cs7-505
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - jupyterlab
+  - matplotlib
+  - pip:
+    - opencv-python
+    - opencv-contrib-python

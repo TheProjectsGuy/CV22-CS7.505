@@ -15,3 +15,8 @@ The assignments are in the [Assignments](./Assignments/README.md) folder. The it
 | Name | Topic |
 | :--- | :--- |
 | [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
+
+[![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
+
+[dev-shield]: https://img.shields.io/badge/Developer-TheProjectsGuy-blue
+[dev-profile-link]: https://github.com/TheProjectsGuy
