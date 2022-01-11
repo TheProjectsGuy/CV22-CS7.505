@@ -1,2 +1,4 @@
 # Ignore the output folder (for images)
 out/
+# Ignore the outputs for images-to-video
+out-*.avi
