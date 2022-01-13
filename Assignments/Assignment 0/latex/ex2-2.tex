@@ -1,5 +1,56 @@
 % !TeX root = ex2.tex
-\section{Capture Images through Webcam}
+\subsection{Capture Images through Webcam}
 
 \paragraph{Problem}
 Use a webcam, capture images and save them to a folder
+
+\paragraph{Experiments \& Learning} Experiments performed are listed below
+
+\begin{enumerate}
+    \item Learned to capture images from a webcam using \texttt{VideoCapture}
+\end{enumerate}
+
+\paragraph{Solution}
+Run the following command
+
+\begin{verbatim}
+    python .\wbecam_capture.py -c 0 -o "./camimgs"
+\end{verbatim}
+
+The code is included in listing \ref{lst:q2-webcam-cap}. Output is shown in figure \ref{fig:q2-webcam-imgs}.
+
+\lstinputlisting[language=python, caption={webcam\_capture.py}, label=lst:q2-webcam-cap]{./../python/wbecam_capture.py}
+
+Four images were captured 
+
+\begin{verbatim}
+    Capturing image to './camimgs/1.jpg'
+    Capturing image to './camimgs/2.jpg'
+    Capturing image to './camimgs/3.jpg'
+    Capturing image to './camimgs/4.jpg'
+    Quit command received
+\end{verbatim}
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{1.jpg}
+        \caption{Image 1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{2.jpg}
+        \caption{Image 2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{3.jpg}
+        \caption{Image 3}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{4.jpg}
+        \caption{Image 4}
+    \end{subfigure}
+    \caption{Images captured through webcam}
+    \label{fig:q2-webcam-imgs}
+    \small
+        Four images captured through a webcam
+\end{figure}

@@ -1,0 +1,101 @@
+% !TeX root = ex2.tex
+\subsection{Chroma Keying}
+
+\paragraph{Problem}
+\emph{Chroma Keying}: Given two videos (with one containing a green screen), create a fusion between the two, such that the subject of the green screen video is in the foreground and the green screen is replaced by the other video.
+
+\paragraph{Experiments \& Learning}
+Experiments performed and things learned are listed below
+
+\begin{enumerate}
+    \item Finding the video files was challenging. The desire was to have a foreground file where the green screen was consistent and easily extractable. Finally, a video was found on YouTube \footnote{\url{https://youtu.be/cqZuhJZAK-8}} and clipped. The video that would become the new background was also found on YouTube \footnote{\url{https://youtu.be/MPUBSZYESgU}}. However, in the process of searching, datasets like \href{https://grail.cs.washington.edu/projects/background-matting-v2/#/datasets}{VideoMatte240K} were discovered (these weren't used because their size is too big for a single task).
+    \item Comparisons were initially done \emph{directly} on the green color channel (simple thresholding on green channel). This worked for the video, but is clearly not generalizable. There is no fixed metric that describes the \emph{green-ness} of a color on the RGB color spectrum. Through some search and tutorials \footnote{\url{https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html}}, a system that uses the \textbf{HSV} (Hue, Saturation, Value) colorspace was implemented. \emph{Hue} covers the color in a single number, \emph{saturation} covers the sharpness (presence) of the color, and \emph{value} covers the darkness of the color.
+    \item Through experiments, a suitable hue threshold and margin was selected. However, the program gives provision to use custom values also. Additionally, there is also provision to capture specific images (along with masks) \emph{while} the program is running and previewing the result.
+\end{enumerate}
+
+\paragraph{Solution} The following script (in listing \ref{lst:q2-chroma-keying}) can be run
+
+\begin{verbatim}
+    python .\chroma_keying.py -g 215 -t 10 -r 25
+\end{verbatim}
+
+The code can be found in listing \ref{lst:q2-chroma-keying} and frames from the resulting video are shown in figure \ref{fig:q2-chroma-keying}
+
+\lstinputlisting[language=python, caption={chroma\_keying.py}, label=lst:q2-chroma-keying]{./../python/chroma_keying.py}
+
+The above code (listing) generates the following output
+
+\begin{verbatim}
+    HSV: 60, 255, 215
+    Saved image '1' in folder '****\chroma_out'
+    Saved image '2' in folder '****\chroma_out'
+    Saved image '3' in folder '****\chroma_out'
+    Saved image '4' in folder '****\chroma_out'
+    Foreground video finished
+    Video writing completed
+\end{verbatim}
+
+The output files are \texttt{chroma\_res.avi} which contains the main video, \texttt{img\_bgN.jpg} which contains the background image (which will be separated), \texttt{img\_fg1.jpg} which contains the foreground image, \texttt{maskN.jpg} which contains the mask image, and \texttt{img\_fN.jpg} which contains the final image.
+
+\begin{figure}[t]
+    \centering
+    % Capture 1
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_bg1.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_fg1.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{mask1.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_f1.jpg}
+    \end{subfigure}
+    % Capture 2
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_bg2.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_fg2.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{mask2.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_f2.jpg}
+    \end{subfigure}
+    % Capture 3
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_bg3.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_fg3.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{mask3.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_f3.jpg}
+    \end{subfigure}
+    % Capture 4
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_bg4.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_fg4.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{mask4.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{img_f4.jpg}
+    \end{subfigure}
+
+    \caption{Chroma keying results}
+    \label{fig:q2-chroma-keying}
+    \small
+        Snapshots and stages of the chroma keying process. The individual rows are the sequences (as time progresses). First column is the background that is to be substituted for the placeholder color. The second column is the foreground (with a placeholder color). The third column is the mask that detects the placeholder color (for substitution). The last column is the resulting image (which is put in a video file).
+
+        The video whose images are shown in the first column was taken from \href{https://youtu.be/MPUBSZYESgU}{YouTube}. The second column is also from \href{https://youtu.be/cqZuhJZAK-8}{YouTube}.
+\end{figure}

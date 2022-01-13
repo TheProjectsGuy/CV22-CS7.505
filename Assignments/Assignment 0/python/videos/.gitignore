@@ -1,2 +1,3 @@
-# Ignore the vtest.avi (large file)
-vtest.avi
+# Ignore all videos
+*.avi
+*.mp4
