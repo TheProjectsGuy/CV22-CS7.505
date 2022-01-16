@@ -1,0 +1,29 @@
+% !TeX root = main.tex
+\section{Additional Tasks}
+
+This section is dedicated to discussion on \emph{additional} tasks given in the assignment. This section can be skipped.
+
+\subsection{Shot Detection}
+
+If the exact timings (frame numbers) of the shot transitions are given / known, then the problem is as simple as traversing through a list of indices. Only minor modifications to code in \ref{lst:q2-vid-to-imgs} will be required. This can be provided as a function.
+
+If the timings (frame numbers) of the shot transitions are not known, then any of the following methods can be used
+
+\begin{itemize}
+    \item \textbf{Color histogram}: Where color histogram differences are monitored and whenever they exceed a certain threshold, a scene change is detected. Some resources are \cite{cotsaces2006video} and \cite{mas2003video}.
+    \item \textbf{AI}: There are CNN based methods for this purpose. A reference is \cite{7805554}.
+\end{itemize}
+
+The above methods yield the detection boundaries, which can be used in the function described in the beginning of this section.
+
+\subsection{Face Detection}
+
+\paragraph{Face Detection methods}
+The following are linked as references
+
+\begin{itemize}
+    \item OpenCV facial detection using \href{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html}{Haar Cascades}.
+    \item Some AI algorithms for facial detection can be found in \cite{an2017cnns} and \cite{zafeiriou2015survey}.
+\end{itemize}
+
+The Face Detection Data Set can be found on \url{https://vis-www.cs.umass.edu/fddb/}, and downloaded through the procedure described in the GitHub repository \href{https://github.com/cezs/FDDB}{cezs/FDDB}.

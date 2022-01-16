@@ -17,6 +17,12 @@
 # Result files
 *.out
 *.pdf
+# XML files generated
+*.run.xml
+# Bibliography
+*.bbl
+*.bcf
+*.blg
 
 # Include result
 !main.pdf

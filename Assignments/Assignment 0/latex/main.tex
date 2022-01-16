@@ -1,17 +1,31 @@
 \input{preamble.tex}
 
+\fancypagestyle{fancy_tr_rno}
+{
+   \fancyhf{}
+   \fancyhead[R]{Assignment 0 - Avneesh Mishra - 2021701032}
+   \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+
 \title{CS7.505 - Assignment 0 \\
     \Large OpenCV and Chroma Keying}
 
 \author{
     Avneesh Mishra \\
     \texttt{avneesh.mishra@research.iiit.ac.in}
-    \thanks{Roll No: 2021701032}
+    \thanks{M.S. by research - CSE, IIIT Hyderabad, Roll No: 2021701032}
 }
 
 \begin{document}
     \maketitle
+    \thispagestyle{fancy_tr_rno}
     \tableofcontents
+    \listoffigures
+    \lstlistoflistings
+
+    \paragraph{Shared results}
+    The results and code presented here are available through \href{https://iiitaphyd-my.sharepoint.com/:f:/g/personal/avneesh_mishra_research_iiit_ac_in/EvF-gdLQc5VMhvc1izscJJEBSwqSCISDNdua8c60FN89xg?e=x9JUCJ}{this link}\footnote{\url{https://bit.ly/3A3MCl2}} (only IIITH access). The author can be contacted for the material too. Most of the items are included here as code listings and figures.
+    
     \pagebreak
     % Main content
     % Task 1: Install OpenCV
@@ -19,4 +33,9 @@
     \pagebreak
     % Task 2: Chroma Keying
     \subfile{ex2.tex}
+    \pagebreak
+    % Task 3: Additional (optional) tasks
+    \subfile{exA.tex}
+    \pagebreak
+    \printbibliography
 \end{document}
