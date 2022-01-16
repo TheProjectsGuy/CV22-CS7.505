@@ -7,6 +7,8 @@ Assignment 0 for course `CS7.505 - Computer Vision`.
 - [Assignment 0: OpenCV and Chroma Keying](#assignment-0-opencv-and-chroma-keying)
     - [Table of contents](#table-of-contents)
     - [Content](#content)
+    - [Extra material](#extra-material)
+        - [Face Detection Data Set](#face-detection-data-set)
 
 ## Content
 
@@ -31,6 +33,20 @@ The following folders has extra material
 | :---- | :---- | :---- |
 | 1 | [./latex/](./latex/) | LaTeX source code for generating PDF |
 | 2 | [./python/](./python/) | Python folder, contains all scripts |
+
+## Extra material
+
+### Face Detection Data Set
+
+> **GitHub**: [cezs/FDDB](https://github.com/cezs/FDDB)
+
+Run the following to download
+
+```bash
+wget http://vis-www.cs.umass.edu/fddb/FDDB-folds.tgz
+wget http://vis-www.cs.umass.edu/fddb/README.txt
+wget http://tamaraberg.com/faceDataset/originalPics.tar.gz
+```
 
 [![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
 
