@@ -14,13 +14,13 @@ The completed assignments are listed below
 
 | Name | Topic |
 | :--- | :--- |
-| | |
+| [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
 
 The following assignments are being worked upon
 
 | Name | Topic |
 | :--- | :--- |
-| [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
+| Assignment 1 | |
 
 [![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
 
