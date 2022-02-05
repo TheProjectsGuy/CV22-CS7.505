@@ -15,6 +15,7 @@ The contents of this folder are described in this section
 | S. No. | Item Name | Description |
 | :---- | :---- | :---- |
 | 1 | [Assignment1.pdf](./Assignment1.pdf) | Questions (given) for the assignment |
+| 2 | [Submission](./Submission/README.md) folder | Submission for the assignment |
 
 [![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
 

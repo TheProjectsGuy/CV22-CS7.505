@@ -15,12 +15,12 @@ The completed assignments are listed below
 | Name | Topic |
 | :--- | :--- |
 | [Assignment 0](./Assignment%200/README.md) | OpenCV and Chroma Keying |
+| [Assignment 1](./Assignment%201/README.md) | Camera calibration |
 
 The following assignments are being worked upon
 
 | Name | Topic |
 | :--- | :--- |
-| Assignment 1 |  |
 
 [![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
 
