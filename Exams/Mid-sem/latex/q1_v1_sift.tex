@@ -1,0 +1,40 @@
+% !TeX root = q1_v1.tex
+
+\subsection{SIFT}
+
+Scale Invariant Feature Transform (SIFT) is an image feature generation method introduced by David G. Lowe in \cite{sift-original-lowe}. A more explained iteration was presented in \cite{sift-detailed-lowe} with some revisions to the model. The primary contribution of the author was exploring the features in multiple scales (through an image pyramid), which makes the keypoint descriptors \emph{scale} invariant.
+
+\paragraph*{Detector}
+
+The keypoint detector has the following basic steps
+
+\begin{enumerate}
+    \item Construction of DoG (Difference of Gaussian) image pyramid: The input image resolution is increased (scaled up) by a factor of two using bilinear interpolation.
+    Then two successive gaussian blurs are applied, yielding image \texttt{A} (less blurred) and \texttt{B} (more blurred).
+    Subtracting image \texttt{B} from \texttt{A} given the Difference of Gaussian image.
+    This is repeated for scales of $1.5$ in each direction (up and down). This scaling factor was later revised to $2$.
+
+    \item Achieve keypoint locations: The local extrema in the DoG image is a keypoint. 
+    First, eight neighbor comparisons are made at the same scale. 
+    Then, if the point is in extrema (maximum or minimum), comparisons are made at higher scales (position interpolation to maintain scale).
+    
+    \item Extract Keypoint orientations: The image \texttt{A} is used to compute the gradient magnitudes and orientations. The magnitudes are thresholded to $0.1$ times the maximum gradient value (to reduce illumination effects).
+    A histogram of gradient orientations in the local neighborhood of keypoints is created. The weight of the orientations is the thresholded gradient values.
+    This histogram (containing $36$ bins covering $0^\circ$ to $360^\circ$) is smoothened, and the peak is chosen as the gradient orientation.
+\end{enumerate}
+
+In the end, the keypoint locations (on the image) and orientations are obtained. The direction is used to achieve rotation-invariant features.
+
+\paragraph*{Descriptor}
+
+The keypoint descriptor (as presented in the original work in \cite{sift-original-lowe}) has the following basic steps
+
+\begin{enumerate}
+    \item Reorient the local region around the keypoint. This is basically to set the local orientation (of keypoint) as a reference. This is done by simple subtraction of gradient orientations in later steps.
+    \item Subdivide the local region: The local region (within the radius of $8$ pixels) is sub-divided into a $4 \times 4$ sub-array, with each sub-array having an 8-bin gradient histogram.
+    \item Run the same on a larger scale version: On one scale higher in the pyramid, perform the above step but with a $2 \times 2$ sub-array (still $8$ bins in the histogram).
+\end{enumerate}
+
+Note that the gradient directions for the histogram are not just the gradients at the center pixel but are interpolated in the $n \times n$ grid (sub-array with $n=4 $ or $2$). The total number of SIFT descriptors (length) for a keypoint is $8 \times 4 \times 4 + 8 \times 2 \times 2 = 160$. 
+
+In the revised edition \cite{sift-detailed-lowe}, a $16 \times 16$ local region is sub-divided into $4\times 4$ grid, with each grid having $8$ orientation bins (from histogram). Therefore, the new descriptor length becomes $8 \times 4 \times 4 = 128$. It is found that this is much faster to compute and doesn't have a large compromise on performance.

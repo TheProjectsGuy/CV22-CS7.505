@@ -1,0 +1,50 @@
+% !TeX root = main.tex
+
+\section{Questions}
+
+I formulated the following questions for the exam.
+
+% --------- Question texts: Begin ---------
+% Question 1
+\newcommand{\questionOne}{
+    \input{q1.tex}
+}
+
+% Question 2
+\newcommand{\questionTwo}{
+    \input{q2.tex}
+}
+% ---------- Question texts: End ----------
+
+\begin{enumerate}
+    \item \questionOne
+    \item \questionTwo
+\end{enumerate}
+
+\subsection{Reasons}
+
+The reasons why I feel these questions are worthy and/or interesting
+
+\subsubsection*{Q1: Keypoint detection and description}
+
+\paragraph*{Question}
+\begin{displayquote}
+    \questionOne
+\end{displayquote}
+
+\paragraph*{Reason}
+This question promotes a deeper dive into the reading material for the theoretical methods taught in class. It should serve as a quick and good reference for traditional keypoint detection and description methods.
+The aim is to have a good information archive, created through reading the original text, well summarized, in one place.
+
+Ensemble techniques have recently caught steam, especially in the age of deep learning. Exploring such options for traditional methods could yield stronger baselines for traditional feature detection and description methods.
+
+
+\subsection*{Q2: Relating matrices and RANSAC}
+
+\paragraph*{Question}
+\begin{displayquote}
+    \questionTwo
+\end{displayquote}
+
+\paragraph*{Reason}
+This question is to lay a foundation for matrices relating to two images. Though the derivation is not traditionally important, it is good to have the theoretical backbone in one place. Random Sample Consensus (RANSAC) is a very popular method to boost the performance of a correspondence matching algorithm. This question aims to derive the theory behind it and also give a direction on how it can be applied using the knowledge of these basic matrices in computer vision. It concludes with examples and references to a python package that can perform RANSAC using the matrices.

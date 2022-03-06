@@ -1,0 +1,35 @@
+% !TeX root = main.tex
+% Answer to Question 1 (Version 1)
+
+\section{Q1: Keypoint Detection and Description}
+
+\paragraph*{Question}
+\begin{displayquote}
+    \input{q1.tex}
+\end{displayquote}
+
+Keypoints are points of \emph{interest} and are useful in image matching and description. Keypoints have to be \emph{detected} (location found in an image) by a detector, and they have to be described by a \emph{descriptor} (for some unique identification).
+
+The answer is described in subsections below.
+
+% SIFT
+\subfile{q1_v1_sift.tex}
+
+% SURF
+\subfile{q1_v1_surf.tex}
+
+% Ensemble
+\subsection{Ensemble}
+
+\paragraph*{TL; DR}
+It depends on the application. Let us take the application of \emph{finding feature correspondences between two images} as an example.
+
+\paragraph*{Example}
+
+The aim is to match the identical features in two images. Feature description plays an essential role here.
+
+Traditionally, the descriptors are uniquely defined for each method (SIFT and SURF, for Example, have different descriptor formats). They, therefore, cannot be concatenated or merged in any easy way. 
+
+However, we can apply some tricks to get an ensemble of correspondences. One of them is to apply descriptor matching (using techniques like mutual nearest neighbor, cosine distance, Euclidean distance, or Mahalanobis distance) for the \emph{individual} methods (separately). Then, obtain the keypoints (again, separately) and then concatenate the obtained keypoints. We now have point correspondences from both methods.
+
+Such methods can boost correspondences between two images by a significant margin.

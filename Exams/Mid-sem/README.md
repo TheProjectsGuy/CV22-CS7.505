@@ -17,4 +17,11 @@ The contents of this folder are as follows.
 
 | S. No. | Item | Description |
 | :----- | :--- | :---------- |
-| 1 | [Question.md](./Question.md) | The questions for the exam (make your own questions) |
+| 1 | [Question.md](./Question.md) | The questions for the exam (make your own questions). Taken from Moodle. |
+| 2 | [main.pdf](./latex/main.pdf) | The main PDF file for submission |
+
+The folder also contains the following auxiliary items.
+
+| Item | Description |
+| :--- | :---------- |
+| [latex](./latex/) folder | All LaTeX source code |
