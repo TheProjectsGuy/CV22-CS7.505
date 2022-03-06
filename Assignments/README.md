@@ -1,6 +1,6 @@
 # Assignments for CS7.505 - Computer Vision - Spring 2022
 
-The assignments done for the course
+The assignments conducted for the course
 
 ## Table of contents
 

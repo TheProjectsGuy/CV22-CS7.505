@@ -1,12 +1,13 @@
 # Computer Vision (Spring 2022) @ IIITH
 
-A repository to store all items pertaining to course `Computer Vision` at IIIT Hyderabad (Spring 2022).
+A repository to store all course `CS7.505 - Computer Vision - Spring 2022` items at IIIT Hyderabad.
 
 ## Table of contents
 
 - [Computer Vision (Spring 2022) @ IIITH](#computer-vision-spring-2022--iiith)
     - [Table of contents](#table-of-contents)
     - [Assignments](#assignments)
+    - [Exams](#exams)
 
 ## Assignments
 
@@ -15,6 +16,14 @@ The assignments are in the [Assignments](./Assignments/README.md) folder. The it
 | Name | Topic |
 | :--- | :--- |
 | [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
+
+## Exams
+
+The examinations conducted are in the [Exams](./Exams/README.md) folder. The items are as follows.
+
+| Name | Description |
+| :-- | :------ |
+| [Mid-sem](./Exams/Mid-sem/README.md) | Mid-semester exam |
 
 [![Developer TheProjectsGuy][dev-shield]][dev-profile-link]
 
