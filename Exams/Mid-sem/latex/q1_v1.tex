@@ -10,7 +10,7 @@
 
 Keypoints are points of \emph{interest} and are useful in image matching and description. Keypoints have to be \emph{detected} (location found in an image) by a detector, and they have to be described by a \emph{descriptor} (for some unique identification).
 
-The answer is described in subsections below.
+The answer is described in the subsections below.
 
 % SIFT
 \subfile{q1_v1_sift.tex}
@@ -30,6 +30,6 @@ The aim is to match the identical features in two images. Feature description pl
 
 Traditionally, the descriptors are uniquely defined for each method (SIFT and SURF, for Example, have different descriptor formats). They, therefore, cannot be concatenated or merged in any easy way. 
 
-However, we can apply some tricks to get an ensemble of correspondences. One of them is to apply descriptor matching (using techniques like mutual nearest neighbor, cosine distance, Euclidean distance, or Mahalanobis distance) for the \emph{individual} methods (separately). Then, obtain the keypoints (again, separately) and then concatenate the obtained keypoints. We now have point correspondences from both methods.
+However, we can apply some tricks to get an ensemble of correspondences. One of them is to apply descriptor matching (using techniques like the mutual nearest neighbor, cosine distance, Euclidean distance, or Mahalanobis distance) for the \emph{individual} methods (separately). Then, obtain the keypoints (again, separately) and then concatenate the obtained keypoints. We now have point correspondences from both methods.
 
 Such methods can boost correspondences between two images by a significant margin.

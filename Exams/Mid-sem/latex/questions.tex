@@ -14,16 +14,33 @@ I formulated the following questions for the exam.
 \newcommand{\questionTwo}{
     \input{q2.tex}
 }
+
+% Question 3
+\newcommand{\questionThree}{
+    \input{q3.tex}
+}
+
 % ---------- Question texts: End ----------
 
 \begin{enumerate}
     \item \questionOne
     \item \questionTwo
+    \item \questionThree
 \end{enumerate}
 
 \subsection{Reasons}
 
-The reasons why I feel these questions are worthy and/or interesting
+The reasons why I feel these questions are worthy and interesting
+
+\begin{itemize}
+    \item The set has the perfect balance of theory, math, and critical thinking
+    \begin{itemize}
+        \item Question 1 is theoretical and involves reading papers.
+        \item Question 2 is towards practical mathematics.
+        \item Question 3 involves programming.
+    \end{itemize}
+    \item The questions can have concrete answers and are not vague.
+\end{itemize}
 
 \subsubsection*{Q1: Keypoint detection and description}
 
@@ -48,3 +65,13 @@ Ensemble techniques have recently caught steam, especially in the age of deep le
 
 \paragraph*{Reason}
 This question is to lay a foundation for matrices relating to two images. Though the derivation is not traditionally important, it is good to have the theoretical backbone in one place. Random Sample Consensus (RANSAC) is a very popular method to boost the performance of a correspondence matching algorithm. This question aims to derive the theory behind it and also give a direction on how it can be applied using the knowledge of these basic matrices in computer vision. It concludes with examples and references to a python package that can perform RANSAC using the matrices.
+
+\subsection*{Q3: Bounding Box}
+
+\paragraph*{Question}
+\begin{displayquote}
+    \questionThree
+\end{displayquote}
+
+\paragraph*{Reason}
+The question is to implement the camera model and transformations in Python to solve a real-world problem. The question can test the understanding of the camera model if solved correctly. Plus, it will be something that can be extended and is the only interactive part of this exam.

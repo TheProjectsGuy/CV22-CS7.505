@@ -1,0 +1,33 @@
+% !TeX root = main.tex
+
+\section{Appendix}
+
+\subsection{Q3: Code for Bounding Box}
+\label{app:q3-code}
+
+The code for creating the bounding box is shown below
+
+\lstinputlisting[language=Python]{../python/bounding-box-loc.py}
+
+The output of the program is as follows
+
+\begin{displayquote}
+    Center pixel is: 839, 234
+
+    Vehicle BRD at (X, Y): 9.3510, -4.5330
+
+    Transformation from vehicle to camera frame is: 
+    [[-0.08715574 -0.9961947   0.          4.5329549 ]
+    [ 0.          0.         -1.          1.65      ]
+    [ 0.9961947  -0.08715574  0.          9.35097549]
+    [ 0.          0.          0.          1.        ]]
+
+    Camera projection matrix is:
+    [[721.53   0.   609.55]
+    [  0.   721.53 172.85]
+    [  0.     0.     1.  ]]
+
+    Rear axle in camera frame is (X, Y, Z): [ 3.70936019  1.65       10.10205256]
+
+    Rear axle in image at (x, y): 874, 290
+\end{displayquote}

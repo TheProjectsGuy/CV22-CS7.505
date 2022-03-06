@@ -1,0 +1,8 @@
+% Contents of question 3
+You've been provided with an image taken from a self-driving car that shows another car in front. A camera has been placed on top of the car, 1.65 m from the ground. The camera intrinsic matrix $K$ is provided.
+Your task is to draw a 3D-bounding box around the car in front. Your approach should be to place eight points in the 3D world such that they surround all the corners of the car, then project them onto the image and connect the projected image points using lines. Make a python program for this.
+
+Assume that the image plane is perfectly perpendicular to the ground.
+You might have to apply a small 5° rotation about the vertical axis to align the box perfectly. 
+Rough car dimensions - h: 1.38 m, w: 1.51, l: 4.10.
+Also, estimate the approximate translation vector to the mid-point of the two rear wheels of the car in the camera frame.

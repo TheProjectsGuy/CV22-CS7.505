@@ -1,0 +1,46 @@
+% !TeX root = main.tex
+% About the RANSAC algorithm
+
+\subsection{RANSAC}
+
+Ransom Sample Consensus (RANSAC) is a method to find the best set of inliers from a large collection of samples. It basically is picking the minimum number of required points randomly from a large collection of points; running the estimation and checking algorithm; giving the chosen set a score; and moving on to the next cycle.
+
+Let us say that we have $n$ points with $e \%$ of them being outliers. Our model requires $s$ points (at minimum) to fit / estimate a relation (which holds true for inliers). We want to estimate the inliers in our data (the $n$ points) with probability $p$ (call this probability of success).
+
+Let us calculate the maximum number of cycles $T$ that will be required.
+
+The probability that we pick an inlier from our data is $1-e$.
+
+The probability that we pick $s$ inliers from our data (each selection is independent), is therefore $(1-e)^s$. Therefore, the probability that we pick \emph{at least} one outlier is $1-(1-e)^s$.
+
+The probability that we pick at least one outlier $T$ times is $\left(1-(1-e)^s\right)^T$. However, the experiment should end with $T$ trials and if we pick at least one outlier every trial, then we've essentially failed. The probability of failure is $1-p$. These two should be equal. We therefore have
+
+\begin{align}
+    1 - p &= \left(1-(1-e)^s\right)^T
+    \Rightarrow \log(1-p) = T \log(1-(1-e)^s) 
+    \nonumber \\
+    &\Rightarrow T = \frac{\log(1-p)}{\log(1-(1-e)^s)}
+    \label{eq:q2-ransac-numT}
+\end{align}
+
+The equation \ref{eq:q2-ransac-numT} can be used to estimate the maximum number of random samplings the RANSAC process should need.
+
+\subsubsection*{Python package - \texttt{pydegensac}}
+
+The python package \texttt{pydegensac} allows us to run such RANSAC procedures quickly. Official repository can be found on \href{https://github.com/ducha-aiki/pydegensac}{GitHub}.
+
+The following can be used for pure homographies (cases like $\mathbf{x}'' = \mathbf{H\, x}'$)
+
+\begin{lstlisting}[language=Python]
+    H, mask = pydegensac.findHomography(src_pts, dst_pts, 4.0, 0.99, 5000)
+\end{lstlisting}
+
+Here, the \texttt{src\_pts} and \texttt{dst\_pts} are the $n, 2$ correspondences (this could be a numpy array). We accept a pixel threshold of $4.0$ pixel distance (correspondences within these distances, re-projected from the model are considered inliers). The confidence is $0.99$, with $5000$ max iterations (cycles).
+
+Sometimes, there is a viewpoint change. In such cases, doing RANSAC for the estimation of fundamental matrix and finding the inlier mask becomes helpful. The following can be used for fundamental matrix (cases like $x'^\top \mathbf{F} x'' = 0$)
+
+\begin{lstlisting}[language=Python]
+    F, mask = pydegensac.findFundamentalMatrix(src_pts, dst_pts, 4.0, 0.999, 10000, enable_degeneracy_check= True)
+\end{lstlisting}
+
+All argument (except the last) retain their previous meanings. The argument \texttt{enable\_degeneracy\_check} allows the checking of the case when the points are degenerate (the fundamental matrix cannot be calculated under these conditions). This usually happens when the linear equation in $\mathbf{F}$ loses rank.

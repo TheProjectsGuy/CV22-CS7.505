@@ -1,0 +1,63 @@
+% !TeX root = q2_v1.tex
+% About pure rotation homographies
+
+\subsection{Pure Rotation Homography}
+
+A camera's projection equation can be given as
+
+\begin{equation}
+    \mathbf{x} = \mathbf{KR} [ \mathbf{I} \mid - \mathbf{X}_O ] \; \mathbf{X}
+\end{equation}
+
+Where
+
+\begin{itemize}
+    \item $\mathbf{K}$ is the camera intrinsic matrix
+    \item $\mathbf{R}$ is the rotation matrix of the camera (expressed in the real world coordinates)
+    \item $\mathbf{I}$ is the $3\times 3$ identity matrix
+    \item $\mathbf{X}_O$ is the origin of the camera's projection center in the world (expressed as 3D world coordinates)
+    \item $\mathbf{X}$ is the point in scene (which is being projected) expressed in homogeneous coordinates
+\end{itemize}
+
+The point $\mathbf{x}$ is the location of the point in the image plane (also in homogeneous coordinates).
+
+Note that since there is a dimension lost ($\mathbf{x}$ is $\mathbb{P}^2$ whereas $\mathbf{X}$ is $\mathbb{P}^3$), we cannot truly recover the point $\mathbf{X}$ from just a pixel location $\mathbf{x}$ in the image. 
+
+However, we can recover the \textit{line} passing through the camera center that yields the point $\mathbf{x}$ (for any point on that line). This line can be rotated and projected back as a pixel.
+
+Assume that the initial frame of the camera is given by $\{1\}$ (image pixels represented by $\mathbf{x}'$), the world frame is given by $\{0\}$ and the new camera frame (after \textit{strict} rotation) is given by $\{2\}$ (image pixels represented by $\mathbf{x''}$).
+
+Writing the projection equations, we get
+
+\begin{align}
+    \mathbf{x}' = \mathbf{K} \, ^1_0\mathbf{R} [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X}
+    &&
+    \mathbf{x}'' = \mathbf{K} \, ^2_0\mathbf{R} [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X}
+    \label{eq:q2-rot-cam-proj-eq}
+\end{align}
+
+Note that the camera center and the point ($_0\mathbf{X}_O$ and $_0\mathbf{X}$ in $\mathbb{P}^3$) are represented in the world frame (frame $\{0\}$); and are unchanged.
+Also, note that the two poses of the camera are related as
+
+\begin{equation}
+    ^0_2\mathbf{R} = ^0_1\mathbf{R} \, ^1_2\mathbf{R}
+    \Rightarrow ^2_0\mathbf{R} = ^0_2\mathbf{R}^\top = ^1_2\mathbf{R}^\top \, ^0_1\mathbf{R}^\top 
+    \Rightarrow ^2_0\mathbf{R} = \, ^2_1\mathbf{R} \, ^1_0\mathbf{R}
+    \label{eq:q2-rot-cam-rel-rotmat}
+\end{equation}
+
+Where $^2_1\mathbf{R}$ is $\{1\}$'s orientation expressed in $\{2\}$. Substituting the result of equation \ref{eq:q2-rot-cam-rel-rotmat} in equation \ref{eq:q2-rot-cam-proj-eq}, and noting that we're dealing with homogeneous coordinates here (uniformly scaled values are the same), we get
+
+\begin{align}
+    \rightarrow& \mathbf{x}' = \mathbf{K} \, ^1_0\mathbf{R} [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X}
+    \Rightarrow \mathbf{K}^{-1} \mathbf{x}' \equiv \; ^1_0\mathbf{R} [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X}
+    \nonumber \\
+    \rightarrow& \mathbf{x}'' = \mathbf{K} \, ^2_0\mathbf{R} [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X}
+    \Rightarrow \mathbf{x}'' = \mathbf{K} \, ^2_1\mathbf{R} \, \left ( ^1_0\mathbf{R} \, [ \mathbf{I} \mid - _0\mathbf{X}_O ] \; _0\mathbf{X} \right )
+    \nonumber \\
+    \Rightarrow& \mathbf{x}'' = \, \mathbf{K} \; ^2_1\mathbf{R} \, \mathbf{K}^{-1} \mathbf{x}' = \mathbf{H} \, \mathbf{x}'
+    \qquad \textup{where} \; \mathbf{H} = \mathbf{K} \; ^2_1\mathbf{R} \, \mathbf{K}^{-1}
+    \label{eq:q2-rot-cam-result}
+\end{align}
+
+The equation \ref{eq:q2-rot-cam-result} gives the resulting homography $\mathbf{H}$ (for pure rotation), relating pixels $\mathbf{x}'$ in first image to pixels $\mathbf{x}''$ in the second image.

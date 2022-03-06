@@ -1,0 +1,27 @@
+% !TeX root = q2_v1.tex
+% About the essential matrix
+
+\subsection{Essential Matrix}
+
+The fundamental matrix is used for uncalibrated cameras where we are not interested in knowing the intrinsic parameters of the two cameras. The \textbf{essential matrix} is used for relating images from two \textit{calibrated} cameras; that is, we know the intrinsic matrices.
+
+We can get the projected rays (in 3D space) for the pixel homogeneous coordinates (in both the images) as $^kX' = \mathbf{K}'^{-1} x'$ and $^kX'' = \mathbf{K}''^{-1} x''$. Say that the pixels correspond, that is, these rays intersect each other. The equation \ref{eq:q2-fmat-eq} for the fundamental matrix can then be written as
+
+\begin{align}
+    \rightarrow& \,
+    x'^\top \left ( \mathbf{K}'^{-\top} \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1} \mathbf{K}''^{-1} \right ) x'' = \left ( \mathbf{K}'^{-1}x' \right )^\top  \left ( \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1} \right ) \left ( \mathbf{K}''^{-1} x'' \right ) = 0
+    \nonumber \\
+    \Rightarrow& \, ^kX'^\top \; \left ( \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1} \right ) \; ^kX'' = ^kX'^\top \;\, \mathbf{E} \;\, ^kX'' = 0
+    \Rightarrow \mathbf{E} = \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1}
+    \label{eq:q2-emat-eq}
+\end{align}
+
+The essential matrix relates images from calibrated cameras (whose projected rays can be resolved). Also, correlating equations \ref{eq:q2-fmat-eq} and \ref{eq:q2-emat-eq} we get
+
+\begin{equation}
+    \mathbf{F} = \left ( \mathbf{K}'^{-\top} \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1} \mathbf{K}''^{-1} \right ) = \mathbf{K}'^{-\top} \left ( \mathbf{R}'^{-\top} \left [ b \right ]_\times \mathbf{R}''^{-1} \right ) \mathbf{K}''^{-1} = \mathbf{K}'^{-\top} \; \mathbf{E} \; \mathbf{K}''^{-1}
+\end{equation}
+
+The above equation derives the relation between fundamental matrix $\mathbf{F}$ and essential matrix $\mathbf{E}$.
+
+Note that the fundamental matrix has 7 degrees of freedom, whereas the essential matrix has 5 degrees of freedom.
