@@ -17,6 +17,7 @@ The completed assignments are listed below
 | [Assignment 0](./Assignment%200/README.md) | OpenCV and Chroma Keying |
 | [Assignment 1](./Assignment%201/README.md) | Camera calibration |
 | [Assignment 2](./Assignment%202/README.md) | Optical Flow using Lukas Kanade and keypoint detection |
+| [Assignment 3](./Assignment%203/README.md) | MRFs for Image Segmentation |
 
 The following assignments are being worked upon
 

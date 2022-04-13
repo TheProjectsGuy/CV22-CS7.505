@@ -18,7 +18,7 @@ The assignments are in the [Assignments](./Assignments/README.md) folder. The it
 | [Assignment 0](./Assignments/Assignment%200/README.md) | OpenCV and Chroma Keying |
 | [Assignment 1](./Assignments/Assignment%201/README.md) | Camera calibration |
 | [Assignment 2](./Assignments/Assignment%202/README.md) | Optical Flow using Lukas Kanade and keypoint detection |
-
+| [Assignment 3](./Assignments/Assignment%203/README.md) | MRFs for Image Segmentation |
 
 ## Exams
 

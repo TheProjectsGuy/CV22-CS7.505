@@ -1,0 +1,30 @@
+[1648915571.7402053] Started GrabCut
+[1648915574.7002058] Iteration 0 of GrabCut
+[1648915589.5894904] Starting st_mincut
+[1648915595.9035237] Finished st_mincut
+[1648915596.2145019] Iteration 0 gives: 3192824.677559314
+[1648915596.3315177] Iteration 1 of GrabCut
+[1648915613.6331098] Starting st_mincut
+[1648915617.504139] Finished st_mincut
+[1648915617.6711094] Iteration 1 gives: 3122506.3381015784
+[1648915617.7561102] Iteration 2 of GrabCut
+[1648915633.0816867] Starting st_mincut
+[1648915635.983718] Finished st_mincut
+[1648915636.141793] Iteration 2 gives: 3044351.014820306
+[1648915636.2116888] GrabCut finished
+[1648915715.1137197] Started GrabCut
+[1648915717.0687253] Iteration 0 of GrabCut
+[1648915729.816694] Starting st_mincut
+[1648915732.0357184] Finished st_mincut
+[1648915732.170689] Iteration 0 gives: 3019659.5269900262
+[1648915732.2806904] Iteration 1 of GrabCut
+[1648915744.30669] Starting st_mincut
+[1648915746.6457202] Finished st_mincut
+[1648915746.804696] Iteration 1 gives: 3015073.918891334
+[1648915746.8696897] Iteration 2 of GrabCut
+[1648915762.988214] Starting st_mincut
+[1648915766.9822052] Finished st_mincut
+[1648915767.1892078] Iteration 2 gives: 3015309.908582214
+WARN: The energy seems to have increased
+[1648915767.2722065] GrabCut finished
+Exit command received

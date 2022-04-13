@@ -1,0 +1,29 @@
+[1648900137.4397635] Started GrabCut
+[1648900139.2837644] Iteration 0 of GrabCut
+[1648900154.1078] Starting st_mincut
+[1648900157.9897985] Finished st_mincut
+[1648900158.1637995] Iteration 0 gives: 3132742.338540888
+[1648900158.2268004] Iteration 1 of GrabCut
+[1648900169.4088027] Starting st_mincut
+[1648900172.0088007] Finished st_mincut
+[1648900172.1588113] Iteration 1 gives: 3009822.472884009
+[1648900172.2138028] Iteration 2 of GrabCut
+[1648900183.6268067] Starting st_mincut
+[1648900186.1157992] Finished st_mincut
+[1648900186.258832] Iteration 2 gives: 3009452.9543446
+[1648900186.2957985] GrabCut finished
+[1648900435.8696852] Started GrabCut
+[1648900437.854681] Iteration 0 of GrabCut
+[1648900448.7426844] Starting st_mincut
+[1648900451.8886828] Finished st_mincut
+[1648900452.0476844] Iteration 0 gives: 2960279.6332725477
+[1648900452.1166832] Iteration 1 of GrabCut
+[1648900462.928689] Starting st_mincut
+[1648900465.9067175] Finished st_mincut
+[1648900466.0486825] Iteration 1 gives: 2960207.7769353706
+[1648900466.0576823] Iteration 2 of GrabCut
+[1648900476.0846858] Starting st_mincut
+[1648900479.0976806] Finished st_mincut
+[1648900479.2337153] Iteration 2 gives: 2960200.4782135137
+[1648900479.2509181] GrabCut finished
+Exit command received

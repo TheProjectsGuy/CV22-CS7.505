@@ -1,0 +1,30 @@
+Draw the rectangle first.
+[1648904561.8401573] Started GrabCut
+[1648904564.5281434] Iteration 0 of GrabCut
+[1648904583.0452392] Starting st_mincut
+[1648904586.1722023] Finished st_mincut
+[1648904586.3502016] Iteration 0 gives: 1800576.5145938757
+[1648904586.5312028] Iteration 1 of GrabCut
+[1648904602.822811] Starting st_mincut
+[1648904605.8538063] Finished st_mincut
+[1648904606.0238056] Iteration 1 gives: 1763320.2743003236
+[1648904606.0988097] Iteration 2 of GrabCut
+[1648904622.2414372] Starting st_mincut
+[1648904625.2064378] Finished st_mincut
+[1648904625.3734417] Iteration 2 gives: 1762781.4546407505
+[1648904625.4404116] GrabCut finished
+[1648904822.9545672] Started GrabCut
+[1648904825.4745777] Iteration 0 of GrabCut
+[1648904841.522549] Starting st_mincut
+[1648904845.1465466] Finished st_mincut
+[1648904845.2865474] Iteration 0 gives: 1537261.781308124
+[1648904845.4145498] Iteration 1 of GrabCut
+[1648904861.4185648] Starting st_mincut
+[1648904864.5975444] Finished st_mincut
+[1648904864.7575452] Iteration 1 gives: 1525168.502779142
+[1648904864.85155] Iteration 2 of GrabCut
+[1648904880.5685465] Starting st_mincut
+[1648904883.9235475] Finished st_mincut
+[1648904884.0835462] Iteration 2 gives: 1525071.004096879
+[1648904884.1501014] GrabCut finished
+Exit command received
