@@ -1,0 +1,31 @@
+\input{preamble.tex}
+
+\fancypagestyle{fancy_tr_rno}
+{
+   \fancyhf{}
+   \fancyhead[R]{Assignment 2 - Avneesh Mishra - 2021701032}
+   \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+
+\title{Assignment 2 \\
+    \Large The Secrets of Optical Flow}
+
+\author{
+    Avneesh Mishra \\
+    \texttt{avneesh.mishra@research.iiit.ac.in}
+    \thanks{M.S. by research - CSE, IIIT Hyderabad, Roll No: 2021701032}
+}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy_tr_rno}
+    % \setcounter{tocdepth}{2}    % No subsections
+    \tableofcontents
+    % Main content
+    \pagebreak
+    \subfile{q1.tex}
+    % References
+    \pagebreak
+    \printbibliography
+    \addcontentsline{toc}{section}{Bibliography}
+\end{document}
