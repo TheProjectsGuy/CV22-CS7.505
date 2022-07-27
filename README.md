@@ -1,5 +1,9 @@
 # Computer Vision (Spring 2022) @ IIITH
 
+[Written Notes](https://iiitaphyd-my.sharepoint.com/:f:/g/personal/avneesh_mishra_research_iiit_ac_in/EtVr0RxN2iZFodvtSZkxgiIBxH-rG_tUt8YgU7YzH_sWOQ?e=fJ86wS)
+
+---
+
 A repository to store all course `CS7.505 - Computer Vision - Spring 2022` items at IIIT Hyderabad.
 
 - **Professor**: [Anoop M. Namboodiri](https://faculty.iiit.ac.in/~anoop/)
